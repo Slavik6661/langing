@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #f7f1e8;
+  background: #0f1110;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #0f1110;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, rgba(15, 17, 16, 0.96), rgba(15, 17, 16, 1)),
+    #0f1110;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  color: #0f1110;
+  background: #d8b56d;
+}
+
+@layer components {
+  .container-premium {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass-panel {
+    @apply border border-white/10 bg-white/[0.055] shadow-premium backdrop-blur-xl;
+  }
+
+  .premium-button {
+    @apply inline-flex min-h-12 max-w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-center text-sm font-semibold leading-5 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gold/60 focus:ring-offset-2 focus:ring-offset-graphite sm:px-6;
+  }
+
+  .reveal {
+    @apply translate-y-8 opacity-0 transition duration-700 ease-out;
+  }
+
+  .reveal.is-visible {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .form-field {
+    @apply w-full rounded-md border border-white/10 bg-black/20 px-4 py-3 text-sm text-ivory outline-none transition duration-300 placeholder:text-muted/55 focus:border-gold/60 focus:bg-black/30 focus:ring-2 focus:ring-gold/15;
+  }
+
+  .form-field option {
+    color: #171a18;
+  }
+}
