@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import AudienceSection from './sections/AudienceSection';
 import BusinessSection from './sections/BusinessSection';
 import CTASection from './sections/CTASection';
 import FamilySection from './sections/FamilySection';
@@ -17,6 +18,7 @@ export default function App() {
       <main>
         <Hero />
         <StatsSection />
+        <AudienceSection />
         <PositioningSection />
         <ServicesSection />
         <TimelineSection />

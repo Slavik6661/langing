@@ -1,27 +1,31 @@
-import { useEffect, useState } from 'react';
-import Reveal from '../components/Reveal';
-import { useReveal } from '../hooks/useReveal';
+import { useEffect, useState } from "react";
+import Reveal from "../components/Reveal";
+import { useReveal } from "../hooks/useReveal";
 
 const stats = [
   {
-    label: 'открытых бизнесов',
-    text: 'Помогли предпринимателям запустить работу в Индонезии.',
+    value: 50,
+    label: "открытых бизнесов",
+    text: "Помогли предпринимателям запустить работу в Индонезии.",
   },
   {
-    label: 'зарегистрированных компаний',
-    text: 'Сопроводили оформление юридических лиц и документов.',
+    value: 100,
+    label: "зарегистрированных компаний",
+    text: "Сопроводили оформление юридических лиц и документов.",
   },
   {
-    label: 'сотрудников перевезено',
-    text: 'Организовали легальный переезд команд и ключевых специалистов.',
+    value: 400,
+    label: "сотрудников перевезено",
+    text: "Организовали легальный переезд команд и ключевых специалистов.",
   },
   {
-    label: 'семей получили поддержку',
-    text: 'Закрыли вопросы виз, жилья, школ, страховок и адаптации.',
+    value: 50,
+    label: "семей получили поддержку",
+    text: "Закрыли вопросы виз, жилья, школ, страховок и адаптации.",
   },
 ];
 
-function AnimatedNumber({ start }) {
+function AnimatedNumber({ start, target }) {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
@@ -38,7 +42,7 @@ function AnimatedNumber({ start }) {
       const progress = Math.min((time - startedAt) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
 
-      setValue(Math.round(eased * 100));
+      setValue(Math.round(eased * target));
 
       if (progress < 1) {
         frameId = requestAnimationFrame(tick);
@@ -47,7 +51,7 @@ function AnimatedNumber({ start }) {
 
     frameId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frameId);
-  }, [start]);
+  }, [start, target]);
 
   return (
     <span className="tabular-nums">
@@ -61,7 +65,10 @@ export default function StatsSection() {
   const { ref, isVisible } = useReveal();
 
   return (
-    <section ref={ref} className="relative isolate overflow-hidden py-16 sm:py-20">
+    <section
+      ref={ref}
+      className="relative isolate overflow-hidden py-16 sm:py-20"
+    >
       <div className="absolute inset-x-0 top-1/2 -z-10 h-40 -translate-y-1/2 bg-gradient-to-r from-transparent via-gold/10 to-transparent blur-3xl" />
       <div className="container-premium">
         <Reveal className="glass-panel overflow-hidden rounded-xl">
@@ -71,7 +78,7 @@ export default function StatsSection() {
                 key={item.label}
                 className="group relative min-h-[220px] overflow-hidden bg-ink/90 p-6 transition duration-500 hover:bg-ink sm:p-7"
                 style={{
-                  transform: isVisible ? 'translateY(0)' : 'translateY(18px)',
+                  transform: isVisible ? "translateY(0)" : "translateY(18px)",
                   opacity: isVisible ? 1 : 0,
                   transitionDelay: `${index * 110}ms`,
                 }}
@@ -82,7 +89,7 @@ export default function StatsSection() {
                   Результат
                 </p>
                 <p className="mt-6 font-display text-6xl font-semibold leading-none text-ivory sm:text-7xl">
-                  <AnimatedNumber start={isVisible} />
+                  <AnimatedNumber start={isVisible} target={item.value} />
                 </p>
                 <h3 className="mt-5 max-w-full break-words text-lg font-semibold leading-6 text-ivory">
                   {item.label}

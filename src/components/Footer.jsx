@@ -1,4 +1,11 @@
-const footerServices = ['Компании', 'Счета', 'Визы и ВНЖ', 'Офисы', 'Жилье', 'Налоги'];
+const footerServices = [
+  "Компании",
+  "Счета",
+  "Визы и ВНЖ",
+  "Офисы",
+  "Жилье",
+  "Налоги",
+];
 
 export default function Footer() {
   return (
@@ -16,15 +23,17 @@ export default function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-ivory">Контакты</h3>
           <div className="mt-5 space-y-3 text-sm text-muted">
-            <p>Telegram / WhatsApp: +62 000 0000 0000</p>
-            <p>Email: hello@indonesia-relocation.com</p>
+            <p>Email: leverage.indo.group@gmail.com</p>
           </div>
         </div>
         <div>
           <h3 className="text-sm font-semibold text-ivory">Основные услуги</h3>
           <div className="mt-5 flex flex-wrap gap-2">
             {footerServices.map((item) => (
-              <span key={item} className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
+              <span
+                key={item}
+                className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted"
+              >
                 {item}
               </span>
             ))}

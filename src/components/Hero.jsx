@@ -8,13 +8,14 @@ const benefits = [
   "Счета и аккаунты PayPal, Stripe, Bybit, Indodax и платежные системы",
   "Юридическое и налоговое сопровождение",
   "Переезд сотрудников и семей",
+  "Помощь в подборе индонезийского персонала",
 ];
 
 export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden pb-20 pt-28 sm:pb-24 sm:pt-40 lg:min-h-screen lg:pb-32"
+      className="relative isolate overflow-hidden pb-20 pt-28 sm:pb-24 sm:pt-40 lg:min-h-1/2 lg:pb-32"
     >
       <div className="absolute inset-0 -z-10 bg-premium-radial" />
       <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-graphite to-transparent" />
