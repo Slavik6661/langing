@@ -4,7 +4,7 @@ import SectionTitle from "../components/SectionTitle";
 
 export default function CTASection() {
   return (
-    <section id="lead" className="scroll-mt-24 py-20 sm:py-28">
+    <section id="lead" className="scroll-mt-24 py-20 max-sm:py-10">
       <div className="container-premium">
         <div className="glass-panel overflow-hidden rounded-xl">
           <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">

@@ -1,13 +1,13 @@
-import FeatureCard from '../components/FeatureCard';
-import ImagePlaceholder from '../components/ImagePlaceholder';
-import SectionTitle from '../components/SectionTitle';
-import Reveal from '../components/Reveal';
-import { familyFeatures } from '../data/features';
-import { images } from '../data/images';
+import FeatureCard from "../components/FeatureCard";
+import ImagePlaceholder from "../components/ImagePlaceholder";
+import SectionTitle from "../components/SectionTitle";
+import Reveal from "../components/Reveal";
+import { familyFeatures } from "../data/features";
+import { images } from "../data/images";
 
 export default function FamilySection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-20 max-sm:py-10">
       <div className="container-premium grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div>
           <SectionTitle

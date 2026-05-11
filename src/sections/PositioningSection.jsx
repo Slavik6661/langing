@@ -1,10 +1,10 @@
-import FeatureCard from '../components/FeatureCard';
-import SectionTitle from '../components/SectionTitle';
-import { positioningCards } from '../data/features';
+import FeatureCard from "../components/FeatureCard";
+import SectionTitle from "../components/SectionTitle";
+import { positioningCards } from "../data/features";
 
 export default function PositioningSection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-20 max-sm:py-10">
       <div className="container-premium">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <SectionTitle

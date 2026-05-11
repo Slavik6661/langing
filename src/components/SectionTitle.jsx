@@ -4,9 +4,7 @@ export default function SectionTitle({ eyebrow, title, text, align = "left" }) {
   const isCenter = align === "center";
 
   return (
-    <Reveal
-      className={isCenter ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}
-    >
+    <Reveal className={isCenter ? "max-w-3xl text-left" : "max-w-3xl"}>
       {eyebrow && (
         <p className="mb-4 max-w-full break-words text-[11px] font-semibold uppercase tracking-[0.16em] text-gold sm:text-xs sm:tracking-[0.28em]">
           {eyebrow}

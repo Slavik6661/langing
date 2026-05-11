@@ -67,7 +67,7 @@ export default function StatsSection() {
   return (
     <section
       ref={ref}
-      className="relative isolate overflow-hidden py-16 sm:py-20"
+      className="relative isolate overflow-hidden py-16 max-sm:py-4"
     >
       <div className="absolute inset-x-0 top-1/2 -z-10 h-40 -translate-y-1/2 bg-gradient-to-r from-transparent via-gold/10 to-transparent blur-3xl" />
 
