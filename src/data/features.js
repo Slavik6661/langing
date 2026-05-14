@@ -1,7 +1,7 @@
 export const positioningCards = [
   {
     title: "Бизнес",
-    text: "Компания, счета, платежные системы, налоги, юристы.",
+    text: "Компания, госрегистрации, счета, платежные системы, налоги, юристы.",
   },
   {
     title: "Команда",
@@ -15,6 +15,8 @@ export const positioningCards = [
 
 export const businessFeatures = [
   "Компания",
+  "Налоговый номер и кабинет",
+  "Регистрация в иммиграции",
   "Банки",
   "PayPal / Stripe / Bybit / Indodax",
   "Налоги",

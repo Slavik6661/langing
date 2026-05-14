@@ -9,7 +9,7 @@ export default function PositioningSection() {
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <SectionTitle
             eyebrow="Единая система"
-            title="Один партнер для всего переезда"
+            title="Один партнер для всего процесса"
             text="Мы берем на себя весь процесс: от регистрации компании и счетов до виз, жилья, офиса, страховок, школ, налогов и юридического сопровождения."
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

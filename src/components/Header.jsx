@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const navItems = [
-  { label: 'Услуги', href: '#services' },
-  { label: 'Сроки', href: '#timeline' },
-  { label: 'Процесс', href: '#timeline' },
-  { label: 'Бизнес', href: '#business' },
-  { label: 'Заявка', href: '#lead' },
+  { label: "Услуги", href: "#services" },
+  { label: "Сроки и процесс", href: "#timeline" },
+  { label: "Бизнес", href: "#business" },
+  { label: "Заявка", href: "#lead" },
 ];
 
 export default function Header() {
@@ -34,7 +33,10 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <a href="#lead" className="premium-button bg-gold text-graphite hover:bg-ivory">
+          <a
+            href="#lead"
+            className="premium-button bg-gold text-graphite hover:bg-ivory"
+          >
             Консультация
           </a>
         </div>

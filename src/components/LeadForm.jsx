@@ -20,7 +20,7 @@ const requestOptions = [
 
 export default function LeadForm() {
   const [status, setStatus] = useState("");
-  const [selectedRequest, setSelectedRequest] = useState("");
+  const [selectedRequest, setSelectedRequest] = useState([]);
   const [isRequestOpen, setIsRequestOpen] = useState(false);
   const [requestError, setRequestError] = useState("");
 
@@ -30,6 +30,11 @@ export default function LeadForm() {
     if (!selectedRequest) {
       setRequestError("Выберите задачу");
       setIsRequestOpen(true);
+      return;
+    }
+
+    if (selectedRequest.length === 0) {
+      setRequestError("Выберите хотя бы одну задачу");
       return;
     }
 
@@ -64,6 +69,15 @@ export default function LeadForm() {
     } catch (error) {
       setStatus("error");
       setTimeout(() => setStatus(""), 5000);
+    }
+  };
+
+  const isSelected = (option) => selectedRequest.includes(option);
+  const toggleRequest = (option) => {
+    if (selectedRequest.includes(option)) {
+      setSelectedRequest(selectedRequest.filter((item) => item !== option));
+    } else {
+      setSelectedRequest([...selectedRequest, option]);
     }
   };
 
@@ -137,7 +151,9 @@ export default function LeadForm() {
                 }}
               >
                 <span className="truncate">
-                  {selectedRequest || "Выберите задачу"}
+                  {selectedRequest.length > 0
+                    ? `Выбрано: ${selectedRequest.join(", ")}`
+                    : "Выберите задачи (можно несколько)"}
                 </span>
                 <span
                   className={`h-2 w-2 shrink-0 rotate-45 border-b border-r border-gold transition duration-300 ${
@@ -155,25 +171,27 @@ export default function LeadForm() {
                   className="absolute left-0 right-0 z-30 mt-2 max-h-72 overflow-y-auto rounded-lg border border-gold/25 bg-ink/95 p-1.5 shadow-premium backdrop-blur-xl"
                 >
                   {requestOptions.map((option) => {
-                    const isSelected = selectedRequest === option;
+                    const selected = isSelected(option);
+                    // const isSelected = selectedRequest === option;
 
                     return (
                       <button
                         key={option}
                         type="button"
                         role="option"
-                        aria-selected={isSelected}
-                        className={`flex w-full items-center justify-between gap-3 rounded-md px-3 py-2.5 text-left text-sm leading-5 transition duration-200 hover:bg-white/8 focus:bg-white/8 focus:outline-none ${
-                          isSelected ? "bg-gold/15 text-gold" : "text-ivory/84"
+                        aria-selected={selected}
+                        className={`flex w-full items-center justify-between gap-3 rounded-md px-3 mb-2 py-2.5 text-left text-sm leading-5 transition duration-200 hover:bg-white/8 focus:bg-white/8 focus:outline-none ${
+                          selected ? "bg-gold/15 text-gold" : "text-ivory/84"
                         }`}
                         onClick={() => {
-                          setSelectedRequest(option);
-                          setRequestError("");
-                          setIsRequestOpen(false);
+                          toggleRequest(option);
+                          // setSelectedRequest(option);
+                          // setRequestError("");
+                          // setIsRequestOpen(false);
                         }}
                       >
                         <span className="break-words">{option}</span>
-                        {isSelected && (
+                        {selected && (
                           <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
                         )}
                       </button>

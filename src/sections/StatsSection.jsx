@@ -4,11 +4,6 @@ import { useReveal } from "../hooks/useReveal";
 
 const stats = [
   {
-    value: 50,
-    label: "открытых бизнесов",
-    text: "Помогли предпринимателям запустить работу в Индонезии.",
-  },
-  {
     value: 100,
     label: "зарегистрированных компаний",
     text: "Сопроводили оформление юридических лиц и документов.",
@@ -16,12 +11,7 @@ const stats = [
   {
     value: 1000,
     label: "сотрудников перевезено",
-    text: "Организовали легальный переезд команд и ключевых специалистов.",
-  },
-  {
-    value: 150,
-    label: "семей получили поддержку",
-    text: "Закрыли вопросы виз, жилья, школ, страховок и адаптации.",
+    text: "Организовали легальный переезд команд и ключевых специалистов, а также их семей.",
   },
 ];
 
@@ -76,7 +66,7 @@ export default function StatsSection() {
           {"Наши результаты"}
         </p>
         <Reveal className="glass-panel overflow-hidden rounded-xl">
-          <div className="grid gap-px bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-px bg-white/10 md:grid-cols-2 lg:grid-cols-2">
             {stats.map((item, index) => (
               <div
                 key={item.label}
